@@ -1,9 +1,4 @@
 # Enhanced Active Contour–Based Skin Lesion Segmentation and Ensemble Classification Using Gradient Boosting and Extra Trees
-## Abstract:
-
-Early detection of melanoma through dermoscopic analysis is vital for improving survival rates, yet manual assessment remains subjective and error-prone. This work presents an automated framework for accurate skin lesion segmentation and classification, inspired by the Kullback–Leibler Level Set (KL–LS) model. The proposed system enhances the original method by integrating **Laplacian contrast** and **distance transform** for improved boundary localization, and a **multi-scale LBP with entropy and intensity ratio** for robust feature representation. To overcome limitations of traditional classifiers such as KNN and SVM, ensemble models — **Gradient Boosting and Extra Trees** — are employed for efficient lesion characterization. Experimental evaluation on **PH2** and **ISIC** datasets demonstrates significant performance improvements in both segmentation accuracy and classification robustness, confirming the effectiveness of the proposed enhancements for automated melanoma detection.
-
-
 
 ### Dataset Access
 Due to GitHub file size limits, the full PH2 and ISIC datasets are stored externally:
@@ -27,8 +22,32 @@ ISIC train results & feature extraction visuals
 ISIC test results 
 [https://drive.google.com/drive/folders/1kJ4DARCcqKUnSIK2WMQvehiOKz6-g-Gf?usp=sharing]
 
-## Steps to execute the code
 
+## Abstract:
+
+Early detection of melanoma through dermoscopic analysis is vital for improving survival rates, yet manual assessment remains subjective and error-prone. This work presents an automated framework for accurate skin lesion segmentation and classification, inspired by the Kullback–Leibler Level Set (KL–LS) model. The proposed system enhances the original method by integrating **Laplacian contrast** and **distance transform** for improved boundary localization, and a **multi-scale LBP with entropy and intensity ratio** for robust feature representation. To overcome limitations of traditional classifiers such as KNN and SVM, ensemble models — **Gradient Boosting and Extra Trees** — are employed for efficient lesion characterization. Experimental evaluation on **PH2** and **ISIC** datasets demonstrates significant performance improvements in both segmentation accuracy and classification robustness, confirming the effectiveness of the proposed enhancements for automated melanoma detection.
+
+## Base paper reference
+
+“Active Contours Based Segmentation and Lesion Periphery Analysis for Characterization of Skin Lesions in Dermoscopy Images”
+                                      — Riaz et al., IEEE Journal of Biomedical and Health 
+## Ideas from base paper:
+The base work by Riaz et al. introduced the Kullback–Leibler Level Set (KL–LS) model for probabilistic active contour segmentation of skin lesions. The method accurately refined lesion boundaries by comparing intensity distributions inside and outside the contour. It employed Local Binary Pattern (LBP) and center-corrected LBP features for texture representation and used K-Nearest Neighbors (KNN) and Support Vector Machine (SVM) classifiers for lesion classification.
+
+## Limitations in the base paper:
+It relied on limited texture features.
+It lacked robustness for high-dimensional data .
+It did not incorporate ensemble or feature-level fusion strategies, resulting in restricted accuracy and generalization.
+
+## Dataset Description
+The PH2 dataset comprises 200 high-resolution dermoscopic images acquired under controlled illumination conditions. Each image is annotated by dermatology experts and categorized into common nevi, atypical nevi, and melanoma classes. Ground-truth lesion masks are provided, enabling objective evaluation of segmentation algorithms. The images have a consistent size of 768×560 pixels, captured with a magnification of 20×.
+
+The ISIC dataset (International Skin Imaging Collaboration) contains a large collection of real-world dermoscopic images gathered from multiple clinical centers, representing high variability in lighting, skin tone, and lesion morphology. Each image is accompanied by a verified ground-truth segmentation mask and diagnosis label, making it suitable for both segmentation and classification benchmarking.
+
+## Tools and libraries used:
+The system was implemented in Python, utilizing libraries such as OpenCV for image preprocessing and segmentation, scikit-learn for ensemble classification (Gradient Boosting and Extra Trees), NumPy and pandas for numerical computation and data management, and matplotlib and tqdm for visualization and performance tracking.
+
+## Steps to execute the code:
 
 ## 1. Set Up the Environment
 
@@ -160,7 +179,7 @@ This will sequentially perform:
 ## Preprocessing → Segmentation → Feature Extraction → Classification → Evaluation
 and generate all outputs, metrics, and graphs automatically.
 
-
+## Output screenshots or result summary
 
 
 
