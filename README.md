@@ -181,7 +181,10 @@ and generate all outputs, metrics, and graphs automatically.
 
 ## Output screenshots or result summary
 
-<img width="978" height="480" alt="image" src="https://github.com/user-attachments/assets/632e5e0e-d31f-4eb1-b8e0-840925695135" />
+![Result Visualization](output nd result summary.png)
+
+## YouTube demo link
+
 
 
 
