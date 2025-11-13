@@ -22,6 +22,140 @@ ISIC train results & feature extraction visuals
 ISIC test results 
 [https://drive.google.com/drive/folders/1kJ4DARCcqKUnSIK2WMQvehiOKz6-g-Gf?usp=sharing]
 
+## Steps to execute the code
+
+
+## 1. Set Up the Environment
+
+Ensure Python 3.8 or above is installed.
+
+Install all required dependencies using:
+
+pip install -r requirements.txt
+
+
+If a requirements.txt file is not available, install the key libraries manually:
+
+pip install numpy opencv-python scikit-learn matplotlib pandas tqdm seaborn torch torchvision pytorch-tabnet scikit-image
+
+## 2. Dataset Preparation
+
+Download and organize the required datasets in the project folder as shown below:
+
+KL_LS_Segmentation_Project/
+│
+├── datasets/
+│   ├── PH2/
+│   │   ├── Images/
+│   │   └── GroundTruth/
+│   └── ISIC/
+│       ├── Images/
+│       └── GroundTruth/
+
+
+
+Download the datasets from the above google drive links:
+
+PH2 Dataset (Google Drive)
+
+ISIC Dataset (Google Drive)
+
+Each dataset should contain both original dermoscopic images and ground-truth segmentation masks.
+
+## 3. Preprocessing
+
+Run preprocessing to remove hair artifacts and prepare the input images:
+
+python src/segmentation.py
+
+
+This step performs:
+
+DullRazor hair removal
+
+Min-RGB conversion for illumination normalization
+
+Adaptive thresholding to generate initial lesion masks
+
+Outputs are saved in:
+
+outputs/<dataset_name>/preprocessed/
+outputs/<dataset_name>/masks/
+
+## 4. Active Contour Segmentation (KL–LS Refinement)
+
+Refine lesion boundaries using the Kullback–Leibler Level Set (KL–LS) method:
+
+python src/kl_ls_refine.py
+
+
+This step iteratively adjusts contours to produce accurate segmentation of lesion regions.
+
+## 5. Feature Extraction
+
+Extract hybrid features for classification, including:
+
+Local Binary Pattern (LBP)
+
+Center-Corrected LBP
+
+Laplacian Contrast
+
+Distance Transform
+
+Multi-Scale Entropy and Intensity Ratio
+
+Run the following command:
+
+python src/preprocess.py
+
+
+Extracted feature files will be saved inside:
+
+outputs/features_csv/
+
+## 6. Classification
+
+Run the classification module to train and evaluate models on the extracted features:
+
+python src/classification_gradient_extra.py
+
+
+Implemented classifiers include:
+
+Gradient Boosting
+
+Extra Trees
+
+(Baseline comparison: KNN, SVM)
+
+Results (Accuracy & ROC) will be stored in:
+
+outputs/results_csv/
+
+## 7. Evaluation and Visualization
+
+Evaluate segmentation and classification performance and generate plots:
+
+python src/evaluate.py
+
+
+This computes:
+
+Dice Coefficient, Hammoude Distance, and XOR Error for segmentation
+
+Accuracy (%) and ROC (%) for classification
+
+Visuals and summary results will be saved under:
+
+outputs/visuals/
+
+
+This will sequentially perform:
+## Preprocessing → Segmentation → Feature Extraction → Classification → Evaluation
+and generate all outputs, metrics, and graphs automatically.
+
+
 
 
 
