@@ -6,6 +6,9 @@ Due to GitHub file size limits, the full PH2 and ISIC datasets are stored extern
 - [ISIC Dataset (Google Drive)][https://drive.google.com/drive/folders/14OYVWOlwl6MRsldEBUCHalPpfMJ2QNak?usp=sharing]
 
 ## Output Visuals
+
+Due to GitHub file size limits, the full PH2 and ISIC datasets feature extraction visuals are stored externally:
+
 PH2 train results & feature extraction
 [https://drive.google.com/drive/folders/1Gg_s-bT3Zog7d1pwqOkL0rSJ38spc9S4?usp=sharing]
 
