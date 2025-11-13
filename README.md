@@ -1,4 +1,9 @@
-# KL_LS_Segmentation_Project
+## Enhanced Active Contour–Based Skin Lesion Segmentation and Ensemble Classification Using Gradient Boosting and Extra Trees
+# Abstract:
+
+Early detection of melanoma through dermoscopic analysis is vital for improving survival rates, yet manual assessment remains subjective and error-prone. This work presents an automated framework for accurate skin lesion segmentation and classification, inspired by the Kullback–Leibler Level Set (KL–LS) model. The proposed system enhances the original method by integrating **Laplacian contrast** and **distance transform** for improved boundary localization, and a **multi-scale LBP with entropy and intensity ratio** for robust feature representation. To overcome limitations of traditional classifiers such as KNN and SVM, ensemble models — **Gradient Boosting and Extra Trees** — are employed for efficient lesion characterization. Experimental evaluation on **PH2** and **ISIC** datasets demonstrates significant performance improvements in both segmentation accuracy and classification robustness, confirming the effectiveness of the proposed enhancements for automated melanoma detection.
+
+
 
 ### Dataset Access
 Due to GitHub file size limits, the full PH2 and ISIC datasets are stored externally:
